@@ -1,26 +1,28 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <app-user></app-user>
-      </div>
-    </div>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-  import User from './components/User.vue';
+import HelloWorld from './components/HelloWorld.vue'
 
-  export default {
-    components: {
-      appUser: User
-    }
+export default {
+  name: 'App',
+  components: {
+    HelloWorld
   }
+}
 </script>
 
 <style>
-  div.component {
-    border: 1px solid black;
-    padding: 30px;
-  }
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 </style>
