@@ -3,7 +3,7 @@
         <div class="component">
             <h3>You may view the User Details here</h3>
             <p>Many Details</p>
-            <p>User Name: {{ name }}</p>
+            <p>User Name: {{ switchName() }}</p>
             <p>My Name: {{ myName }}</p>
         </div>
     </div>
@@ -11,7 +11,12 @@
 
 <script>
     export default {
-        props: ['name', 'myName']
+        props: ['name', 'myName'],
+        methods: {
+            switchName() {
+                return this.name.split("").reverse().join("");
+            }
+        }
     }
 </script>
 
