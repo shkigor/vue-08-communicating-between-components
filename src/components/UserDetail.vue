@@ -5,6 +5,7 @@
             <p>Many Details</p>
             <p>User Name: {{ switchName() }}</p>
             <p>My Name: {{ myName }}</p>
+            <button @click="resetName">Reset Name</button>
         </div>
     </div>
 </template>
@@ -22,6 +23,10 @@
         methods: {
             switchName() {
                 return this.name.split("").reverse().join("");
+            },
+            resetName() {
+                // this.name = 'Max'; // vue.runtime.esm.js?2b0e:619 [Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value. Prop being mutated: "name"
+                this.$emit('nameWasReset', 'Max');
             }
         }
     }
