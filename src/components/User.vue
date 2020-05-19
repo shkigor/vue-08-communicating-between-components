@@ -6,7 +6,12 @@
         <p>Name is {{ name }}</p>
         <hr>
         <div class="row">
-            <app-user-detail :name="name" myName="Igor" @nameWasReset="name = $event"></app-user-detail>
+            <app-user-detail
+                    :name="name"
+                    myName="Igor"
+                    @nameWasReset="name = $event"
+                    :resetFn="resetName"
+            ></app-user-detail>
             <app-user-edit></app-user-edit>
         </div>
     </div>
@@ -25,6 +30,9 @@
         methods: {
             changeName() {
                 this.name = 'Anna';
+            },
+            resetName() {
+                this.name = 'Max';
             }
         },
         components: {
