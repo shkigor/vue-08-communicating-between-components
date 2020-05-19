@@ -11,8 +11,12 @@
                     myName="Igor"
                     @nameWasReset="name = $event"
                     :resetFn="resetName"
+                    :userAge="age"
             ></app-user-detail>
-            <app-user-edit></app-user-edit>
+            <app-user-edit
+                    :userAge="age"
+                    @ageWasEdited="age = $event"
+            ></app-user-edit>
         </div>
     </div>
 </template>
@@ -24,7 +28,8 @@
     export default {
         data() {
             return {
-                name: 'Max'
+                name: 'Max',
+                age: 27
             }
         },
         methods: {

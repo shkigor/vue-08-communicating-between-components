@@ -5,6 +5,7 @@
             <p>Many Details</p>
             <p>User Name: {{ switchName() }}</p>
             <p>My Name: {{ myName }}</p>
+            <p>User Age: {{ userAge }}</p>
             <button @click="resetName">Reset Name</button>
             <button @click="resetFn()">Reset Name</button>
         </div>
@@ -20,7 +21,8 @@
                 // default: 'Max'
             },
             myName: [String, Array],
-            resetFn: Function
+            resetFn: Function,
+            userAge: Number
         },
         methods: {
             switchName() {
